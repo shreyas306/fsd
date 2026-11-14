@@ -154,7 +154,12 @@ const CapsuleCreationWizard = ({ onSuccess, onCancel }) => {
         theme,
         visibility,
         unlock_at: unlockIso,
-        status: "sealed"
+        status: "draft",
+        letter: letterContent.trim() ? {
+          title: letterTitle,
+          content: letterContent,
+          prompt_used: selectedPrompt
+        } : undefined
       });
       const createdId = capRes.capsule.id;
       for (const item of uploadedFiles) {
@@ -171,8 +176,9 @@ const CapsuleCreationWizard = ({ onSuccess, onCancel }) => {
           title: letterTitle,
           content: letterContent,
           prompt_used: selectedPrompt
-        });
+        }).catch(() => {});
       }
+      await api.capsules.seal(createdId);
       setTimeout(() => {
         setIsSealingAnimation(false);
         setIsSubmitting(false);

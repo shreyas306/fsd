@@ -86,6 +86,9 @@ const api = {
     forceUnlock: (id) => request(`/capsules/${id}/force-unlock`, {
       method: "POST"
     }),
+    openSeal: (id) => request(`/capsules/${id}/open-seal`, {
+      method: "POST"
+    }),
     reschedule: (id, new_unlock_at) => request(`/capsules/${id}/reschedule`, {
       method: "POST",
       body: JSON.stringify({ new_unlock_at })

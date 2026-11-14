@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import apiRouter from "./server/api.js";
+import { db } from "./server/db.js";
 import { startUnlockWorker } from "./server/unlockWorker.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +17,7 @@ async function startServer() {
     res.json({ status: "ok", name: "Digital Time Capsule API", timestamp: (/* @__PURE__ */ new Date()).toISOString() });
   });
   app.use("/api", apiRouter);
+  await db.initMySQLDatabase?.();
   startUnlockWorker();
   if (process.env.NODE_ENV === "production") {
     const distPath = path.resolve(__dirname, "dist");

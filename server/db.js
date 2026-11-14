@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import bcrypt from "bcryptjs";
+import { initMySQL, syncDataToMySQL, loadDataFromMySQL, isMySQLConnected } from "./mysql.js";
 const DATA_DIR = path.resolve(process.cwd(), "data");
 const DB_FILE = path.join(DATA_DIR, "database.json");
 class DatabaseManager {
@@ -46,11 +47,37 @@ class DatabaseManager {
       notification_preferences: []
     };
   }
-  save() {
+  async initMySQLDatabase() {
+    try {
+      const ok = await initMySQL({ silent: false });
+      if (ok) {
+        const mysqlData = await loadDataFromMySQL();
+        if (mysqlData && mysqlData.users && mysqlData.users.length > 0) {
+          this.data = mysqlData;
+          this.saveToFileOnly();
+          console.log("[Database] Loaded data from MySQL.");
+        } else {
+          await syncDataToMySQL(this.data);
+          console.log("[Database] Seeded MySQL with current dataset.");
+        }
+      }
+    } catch (err) {
+      console.warn("[Database] MySQL initialization note:", err.message);
+    }
+  }
+  saveToFileOnly() {
     try {
       fs.writeFileSync(DB_FILE, JSON.stringify(this.data, null, 2), "utf-8");
     } catch (err) {
       console.error("Error writing database file:", err);
+    }
+  }
+  save() {
+    this.saveToFileOnly();
+    if (isMySQLConnected()) {
+      syncDataToMySQL(this.data).catch((err) => {
+        console.error("[Database] Async sync to MySQL failed:", err.message);
+      });
     }
   }
   getData() {

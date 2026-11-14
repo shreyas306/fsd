@@ -5,6 +5,8 @@ import path from "path";
 import fs from "fs";
 import { db } from "./db.js";
 import { requireAuth, optionalAuth, requireAdmin, generateToken } from "./auth.js";
+import { notifySealOpened } from "./notificationService.js";
+import { findUserByEmailFromMySQL, isMySQLConnected } from "./mysql.js";
 const router = Router();
 const uploadsDir = path.resolve(process.cwd(), "uploads");
 if (!fs.existsSync(uploadsDir)) {
@@ -94,12 +96,18 @@ router.post("/auth/register", (req, res) => {
   const token = generateToken(safeUser);
   return res.status(201).json({ user: safeUser, token });
 });
-router.post("/auth/login", (req, res) => {
+router.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ error: "Email and password are required." });
   }
-  const user = db.getData().users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+  let user = db.getData().users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+  if (!user && isMySQLConnected()) {
+    user = await findUserByEmailFromMySQL(email);
+    if (user) {
+      db.getData().users.push(user);
+    }
+  }
   if (!user) {
     return res.status(401).json({ error: "Invalid email or password." });
   }
@@ -114,33 +122,81 @@ router.post("/auth/login", (req, res) => {
   const token = generateToken(safeUser);
   return res.json({ user: safeUser, token });
 });
-router.post("/auth/google", (req, res) => {
-  const { email, name, avatar } = req.body;
-  const targetEmail = (email || "google_traveler@timecapsule.com").toLowerCase();
+router.get("/auth/google-config", (req, res) => {
+  return res.json({ clientId: process.env.GOOGLE_CLIENT_ID || "" });
+});
+
+router.post("/auth/google", async (req, res) => {
+  let { email, name, avatar, credential } = req.body;
+  if (credential) {
+    try {
+      const parts = credential.split(".");
+      if (parts.length === 3) {
+        const payloadJson = Buffer.from(parts[1], "base64").toString("utf-8");
+        const googlePayload = JSON.parse(payloadJson);
+        if (googlePayload.email) {
+          email = googlePayload.email;
+          name = googlePayload.name || googlePayload.given_name || name;
+          avatar = googlePayload.picture || avatar;
+        }
+      }
+    } catch (err) {
+      console.warn("[Google Auth] Error decoding credential:", err.message);
+    }
+  }
+
+  const targetEmail = (email || "google_traveler@timecapsule.com").toLowerCase().trim();
   const data = db.getData();
-  let user = data.users.find((u) => u.email === targetEmail);
+  let user = data.users.find((u) => u.email.toLowerCase() === targetEmail);
+  if (!user && isMySQLConnected()) {
+    user = await findUserByEmailFromMySQL(targetEmail);
+    if (user) {
+      data.users.push(user);
+    }
+  }
+
   if (!user) {
-    const password_hash2 = bcrypt.hashSync("google-oauth-" + Math.random(), 10);
-    const username = (name ? name.toLowerCase().replace(/\s+/g, "_") : "time_explorer") + "_" + Math.floor(Math.random() * 100);
+    const password_hash = bcrypt.hashSync("google-oauth-" + Math.random(), 10);
+    const cleanName = name || targetEmail.split("@")[0] || "Google Explorer";
+    const username = cleanName.toLowerCase().replace(/[^a-z0-9_]/g, "_").slice(0, 15) + "_" + Math.floor(Math.random() * 1000);
     user = {
-      id: `usr_g_${Date.now()}`,
+      id: `usr_g_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
       email: targetEmail,
       username,
-      full_name: name || "Google Explorer",
-      avatar_url: avatar || `https://api.dicebear.com/7.x/bottts/svg?seed=${targetEmail}`,
+      full_name: cleanName,
+      avatar_url: avatar || `https://api.dicebear.com/7.x/identicon/svg?seed=${encodeURIComponent(targetEmail)}`,
       bio: "Traversing the temporal stream with Google Auth.",
       role: "user",
-      timezone: "America/New_York",
-      created_at: (/* @__PURE__ */ new Date()).toISOString(),
-      password_hash: password_hash2
+      timezone: "UTC",
+      created_at: new Date().toISOString(),
+      password_hash
     };
     data.users.push(user);
+    data.notification_preferences.push({
+      user_id: user.id,
+      remind_7_days: true,
+      remind_1_day: true,
+      remind_on_unlock: true,
+      email_notifications: true
+    });
+    data.notifications.push({
+      id: `notif_${Date.now()}_welcome`,
+      user_id: user.id,
+      type: "system",
+      title: "Welcome to Digital Time Capsule!",
+      message: `Successfully authenticated via Google as ${targetEmail}. Your vault is initialized.`,
+      is_read: false,
+      created_at: new Date().toISOString()
+    });
+    logActivity(user.id, user.username, "USER_GOOGLE_AUTH", `User authenticated via Google (${targetEmail})`);
     db.save();
   }
+
   if (user.is_suspended) {
-    return res.status(403).json({ error: "Account suspended." });
+    return res.status(403).json({ error: "Account suspended. Contact support." });
   }
-  const { password_hash, ...safeUser } = user;
+
+  const { password_hash: _, ...safeUser } = user;
   const token = generateToken(safeUser);
   return res.json({ user: safeUser, token });
 });
@@ -267,7 +323,7 @@ router.get("/capsules/:id", optionalAuth, (req, res) => {
   });
 });
 router.post("/capsules", requireAuth, (req, res) => {
-  const { title, description, category, cover_image, theme, visibility, unlock_at, status } = req.body;
+  const { title, description, category, cover_image, theme, visibility, unlock_at, status, letter: attachedLetter } = req.body;
   if (!title || !unlock_at) {
     return res.status(400).json({ error: "Title and unlock date are required." });
   }
@@ -296,6 +352,20 @@ router.post("/capsules", requireAuth, (req, res) => {
   };
   const data = db.getData();
   data.capsules.unshift(newCapsule);
+  if (attachedLetter && (attachedLetter.content || attachedLetter.title)) {
+    const letterObj = {
+      id: `let_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`,
+      capsule_id: newCapsule.id,
+      author_id: user.id,
+      author_name: user.full_name,
+      title: attachedLetter.title || "Letter to My Future Self",
+      content: attachedLetter.content || "",
+      prompt_used: attachedLetter.prompt_used || "",
+      created_at: (new Date()).toISOString(),
+      updated_at: (new Date()).toISOString()
+    };
+    data.letters.push(letterObj);
+  }
   logActivity(
     user.id,
     user.username,
@@ -347,7 +417,7 @@ router.post("/capsules/:id/seal", requireAuth, (req, res) => {
     return res.status(400).json({ error: "Capsule has already unlocked." });
   }
   const unlockTime = new Date(capsule.unlock_at).getTime();
-  if (isNaN(unlockTime) || unlockTime <= Date.now()) {
+  if (isNaN(unlockTime) || unlockTime <= Date.now() - 60000) {
     return res.status(400).json({
       error: "Capsule unlock date must be set in the future before sealing."
     });
@@ -368,7 +438,7 @@ router.post("/capsules/:id/seal", requireAuth, (req, res) => {
   db.save();
   return res.json({ capsule, message: "Capsule sealed successfully into stasis." });
 });
-router.post("/capsules/:id/force-unlock", requireAuth, (req, res) => {
+router.post("/capsules/:id/force-unlock", requireAuth, async (req, res) => {
   const { id } = req.params;
   const data = db.getData();
   const capsule = data.capsules.find((c) => c.id === id);
@@ -377,20 +447,23 @@ router.post("/capsules/:id/force-unlock", requireAuth, (req, res) => {
     return res.status(403).json({ error: "Unauthorized." });
   }
   capsule.status = "unlocked";
-  capsule.unlocked_at = (/* @__PURE__ */ new Date()).toISOString();
-  data.notifications.unshift({
-    id: `notif_${Date.now()}_forced`,
-    user_id: req.user.id,
-    type: "capsule_unlocked",
-    title: "Time Portal Opened!",
-    message: `Capsule "${capsule.title}" has been unlocked. Ready for discovery!`,
-    capsule_id: capsule.id,
-    is_read: false,
-    created_at: (/* @__PURE__ */ new Date()).toISOString()
-  });
-  logActivity(req.user.id, req.user.username, "MANUAL_UNLOCK_TEST", `Fast-unlocked capsule "${capsule.title}"`);
-  db.save();
-  return res.json({ capsule, message: "Capsule has been unlocked!" });
+  capsule.unlocked_at = (new Date()).toISOString();
+  await notifySealOpened(capsule, req.user);
+  return res.json({ capsule, message: "Capsule seal has been opened and broadcast notifications dispatched!" });
+});
+
+router.post("/capsules/:id/open-seal", requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const data = db.getData();
+  const capsule = data.capsules.find((c) => c.id === id);
+  if (!capsule) return res.status(404).json({ error: "Capsule not found." });
+  if (capsule.owner_id !== req.user.id && req.user.role !== "admin") {
+    return res.status(403).json({ error: "Only the capsule keeper or admin can open this seal." });
+  }
+  capsule.status = "unlocked";
+  capsule.unlocked_at = (new Date()).toISOString();
+  const result = await notifySealOpened(capsule, req.user);
+  return res.json({ capsule, message: "Capsule seal opened! Broadcast notifications sent.", notifiedCount: result.notifiedCount });
 });
 router.post("/capsules/:id/reschedule", requireAuth, (req, res) => {
   const { id } = req.params;
@@ -668,10 +741,10 @@ router.post("/capsules/:id/letter", requireAuth, (req, res) => {
   if (capsule.owner_id !== req.user.id) {
     return res.status(403).json({ error: "Only the capsule owner can write letters." });
   }
-  if (capsule.status === "sealed") {
+  let letter = data.letters.find((l) => l.capsule_id === id && l.author_id === req.user.id);
+  if (capsule.status === "sealed" && letter) {
     return res.status(400).json({ error: "Capsule is sealed. Letters cannot be altered." });
   }
-  let letter = data.letters.find((l) => l.capsule_id === id && l.author_id === req.user.id);
   if (letter) {
     letter.title = title || letter.title;
     letter.content = content || letter.content;

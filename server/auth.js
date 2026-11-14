@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
 import { db } from "./db.js";
+import { findUserByIdFromMySQL, isMySQLConnected } from "./mysql.js";
+
 const JWT_SECRET = process.env.JWT_SECRET || "time-capsule-cosmic-secret-key-2026";
+
 function generateToken(user) {
   return jwt.sign(
     {
@@ -12,7 +15,8 @@ function generateToken(user) {
     { expiresIn: "30d" }
   );
 }
-function requireAuth(req, res, next) {
+
+async function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ error: "Authentication required. No token provided." });
@@ -20,7 +24,13 @@ function requireAuth(req, res, next) {
   const token = authHeader.split(" ")[1];
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    const user = db.getData().users.find((u) => u.id === decoded.id);
+    let user = db.getData().users.find((u) => u.id === decoded.id);
+    if (!user && isMySQLConnected()) {
+      user = await findUserByIdFromMySQL(decoded.id);
+      if (user) {
+        db.getData().users.push(user);
+      }
+    }
     if (!user) {
       return res.status(401).json({ error: "User not found or deleted." });
     }
@@ -34,7 +44,8 @@ function requireAuth(req, res, next) {
     return res.status(401).json({ error: "Invalid or expired authentication token." });
   }
 }
-function optionalAuth(req, res, next) {
+
+async function optionalAuth(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return next();
@@ -42,7 +53,13 @@ function optionalAuth(req, res, next) {
   const token = authHeader.split(" ")[1];
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    const user = db.getData().users.find((u) => u.id === decoded.id);
+    let user = db.getData().users.find((u) => u.id === decoded.id);
+    if (!user && isMySQLConnected()) {
+      user = await findUserByIdFromMySQL(decoded.id);
+      if (user) {
+        db.getData().users.push(user);
+      }
+    }
     if (user && !user.is_suspended) {
       const { password_hash, ...safeUser } = user;
       req.user = safeUser;
@@ -51,6 +68,7 @@ function optionalAuth(req, res, next) {
   }
   next();
 }
+
 function requireAdmin(req, res, next) {
   requireAuth(req, res, () => {
     if (!req.user || req.user.role !== "admin") {
@@ -59,6 +77,7 @@ function requireAdmin(req, res, next) {
     next();
   });
 }
+
 export {
   generateToken,
   optionalAuth,
