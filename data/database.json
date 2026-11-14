@@ -1,0 +1,323 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_01",
+      "email": "admin@timecapsule.com",
+      "username": "admin",
+      "full_name": "Administrator",
+      "avatar_url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "bio": "Platform Overseer & Custodian of Eternal Memories",
+      "role": "admin",
+      "timezone": "America/New_York",
+      "created_at": "2026-09-12T09:44:30.539Z",
+      "password_hash": "$2b$10$PXyZodvDxwy/sLGveNZEL.qB9tt0.LC/7XZfNR5ck46EESnx.30LS"
+    },
+    {
+      "id": "usr_demo_02",
+      "email": "alex@timecapsule.com",
+      "username": "alex_starlight",
+      "full_name": "Alex Vance",
+      "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "bio": "Star gazer, photographer, time traveler at heart.",
+      "role": "user",
+      "timezone": "America/New_York",
+      "created_at": "2026-10-12T09:44:30.539Z",
+      "password_hash": "$2b$10$GGScXing/86M0Wj06F5p3OI2Fsq/55dsqdop.6f51oGKf9xfBVfPe"
+    },
+    {
+      "id": "usr_contributor_03",
+      "email": "elena@timecapsule.com",
+      "username": "elena_sky",
+      "full_name": "Elena Rostova",
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "bio": "Wanderer across mountain trails and old books.",
+      "role": "user",
+      "timezone": "Europe/London",
+      "created_at": "2026-10-17T09:44:30.539Z",
+      "password_hash": "$2b$10$GGScXing/86M0Wj06F5p3OI2Fsq/55dsqdop.6f51oGKf9xfBVfPe"
+    }
+  ],
+  "capsules": [
+    {
+      "id": "cap_unlocked_01",
+      "owner_id": "usr_demo_02",
+      "owner_name": "Alex Vance",
+      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "title": "Our Pacific Coast Odyssey 2024",
+      "description": "A 2,000-mile road trip down Highway 1. Sealed when we felt on top of the world.",
+      "category": "Travel",
+      "cover_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+      "theme": "cosmic-cyan",
+      "status": "unlocked",
+      "visibility": "public",
+      "unlock_at": "2026-11-08T09:44:30.539Z",
+      "created_at": "2026-09-27T09:44:30.539Z",
+      "sealed_at": "2026-09-27T09:44:30.539Z",
+      "unlocked_at": "2026-11-08T09:44:30.539Z",
+      "timezone": "America/New_York",
+      "is_archived": false
+    },
+    {
+      "id": "cap_sealed_soon_02",
+      "owner_id": "usr_demo_02",
+      "owner_name": "Alex Vance",
+      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "title": "Letter to My 30th Birthday Self",
+      "description": "Reflections on ambition, fear, love, and what matters most.",
+      "category": "Personal",
+      "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+      "theme": "neon-purple",
+      "status": "unlocked",
+      "visibility": "private",
+      "unlock_at": "2026-11-11T09:47:30.539Z",
+      "created_at": "2026-11-01T09:44:30.539Z",
+      "sealed_at": "2026-11-01T09:44:30.539Z",
+      "timezone": "America/New_York",
+      "is_archived": false,
+      "unlocked_at": "2026-11-14T05:59:03.017Z"
+    },
+    {
+      "id": "cap_shared_03",
+      "owner_id": "usr_demo_02",
+      "owner_name": "Alex Vance",
+      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "title": "Starlight Expedition: Founders Vault",
+      "description": "Our first year building the company together. Hidden thoughts and promises.",
+      "category": "Special Moments",
+      "cover_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "theme": "cosmic-cyan",
+      "status": "sealed",
+      "visibility": "shared",
+      "unlock_at": "2027-11-11T09:44:30.539Z",
+      "created_at": "2026-11-06T09:44:30.539Z",
+      "sealed_at": "2026-11-06T09:44:30.539Z",
+      "timezone": "America/New_York",
+      "is_archived": false
+    },
+    {
+      "id": "cap_draft_04",
+      "owner_id": "usr_demo_02",
+      "owner_name": "Alex Vance",
+      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "title": "Graduation Summer Vibes",
+      "description": "Draft notes and photos from our graduation ceremony.",
+      "category": "Graduation",
+      "cover_image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80",
+      "theme": "aurora-pink",
+      "status": "draft",
+      "visibility": "private",
+      "unlock_at": "2027-05-10T09:44:30.539Z",
+      "created_at": "2026-11-10T09:44:30.539Z",
+      "timezone": "America/New_York",
+      "is_archived": false
+    }
+  ],
+  "memories": [
+    {
+      "id": "mem_01",
+      "capsule_id": "cap_unlocked_01",
+      "uploaded_by": "usr_demo_02",
+      "uploader_name": "Alex Vance",
+      "file_name": "Big_Sur_Sunset.jpg",
+      "file_type": "image",
+      "mime_type": "image/jpeg",
+      "storage_path": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+      "file_size": 2450000,
+      "caption": "The moment the sun touched the Pacific at Big Sur cliff.",
+      "description": "We had been driving for 7 hours, windows down, salty air filling the cabin.",
+      "is_favorite": true,
+      "created_at": "2026-09-27T09:44:30.539Z"
+    },
+    {
+      "id": "mem_02",
+      "capsule_id": "cap_unlocked_01",
+      "uploaded_by": "usr_demo_02",
+      "uploader_name": "Alex Vance",
+      "file_name": "Redwood_Canopy_Walk.jpg",
+      "file_type": "image",
+      "mime_type": "image/jpeg",
+      "storage_path": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+      "file_size": 3100000,
+      "caption": "Walking amongst giants older than civilization itself.",
+      "description": "Felt tiny and at peace.",
+      "is_favorite": true,
+      "created_at": "2026-09-28T09:44:30.539Z"
+    },
+    {
+      "id": "mem_03",
+      "capsule_id": "cap_unlocked_01",
+      "uploaded_by": "usr_demo_02",
+      "uploader_name": "Alex Vance",
+      "file_name": "Campfire_Acoustic_Jam.mp3",
+      "file_type": "audio",
+      "mime_type": "audio/mpeg",
+      "storage_path": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "file_size": 4200000,
+      "caption": "Acoustic jam by the fire under Orion constellation.",
+      "description": "Recorded directly on phone microphone.",
+      "is_favorite": false,
+      "created_at": "2026-09-29T09:44:30.539Z"
+    },
+    {
+      "id": "mem_04",
+      "capsule_id": "cap_sealed_soon_02",
+      "uploaded_by": "usr_demo_02",
+      "uploader_name": "Alex Vance",
+      "file_name": "Desk_Setup_At_Midnight.jpg",
+      "file_type": "image",
+      "mime_type": "image/jpeg",
+      "storage_path": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80",
+      "file_size": 1980000,
+      "caption": "Where all the midnight coding and dreaming happened.",
+      "description": "Coffee mug stained with dark roast, screen glowing violet.",
+      "created_at": "2026-11-01T09:44:30.539Z"
+    }
+  ],
+  "letters": [
+    {
+      "id": "let_01",
+      "capsule_id": "cap_unlocked_01",
+      "author_id": "usr_demo_02",
+      "author_name": "Alex Vance",
+      "title": "To the travelers we are becoming",
+      "content": "Dear Future Self,\n\nIf you are reading this, time has slipped past like sand through cupped hands. \nRemember the salt spray in Monterey? Remember how we promised we wouldn't settle into comfortable numbness?\n\nRight now, as I write this, you were terrified of taking risks, yet you packed two bags and drove into the unknown. I hope you still look up at the stars with that exact reverence. I hope you haven't forgotten how laughter sounds when your ribs ache.\n\nKeep building. Keep trusting. Keep wandering.\n\nWith unconditional love,\nYour 2024 Self",
+      "prompt_used": "What do you hope your future self remembers?",
+      "created_at": "2026-09-27T09:44:30.539Z",
+      "updated_at": "2026-09-27T09:44:30.539Z"
+    },
+    {
+      "id": "let_02",
+      "capsule_id": "cap_sealed_soon_02",
+      "author_id": "usr_demo_02",
+      "author_name": "Alex Vance",
+      "title": "Unlocking the 30s: No Regrets",
+      "content": "Hello Alex!\nToday you turn a new chapter. We worried so much about having everything figured out. Did we solve the puzzle? Probably not, and that is okay. Celebrate this day with people who genuinely care about your peace of mind.",
+      "prompt_used": "What are your biggest dreams?",
+      "created_at": "2026-11-01T09:44:30.539Z",
+      "updated_at": "2026-11-01T09:44:30.539Z"
+    }
+  ],
+  "capsule_members": [
+    {
+      "id": "mem_rel_01",
+      "capsule_id": "cap_shared_03",
+      "user_id": "usr_contributor_03",
+      "role": "contributor",
+      "user_email": "elena@timecapsule.com",
+      "user_name": "Elena Rostova",
+      "user_avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "joined_at": "2026-11-07T09:44:30.539Z"
+    }
+  ],
+  "capsule_invitations": [],
+  "notifications": [
+    {
+      "id": "notif_1794635943018_30krwk",
+      "user_id": "usr_demo_02",
+      "type": "capsule_unlocked",
+      "title": "Your Time Capsule is Unlocked!",
+      "message": "The wait is over! \"Letter to My 30th Birthday Self\" is ready to be opened. Relive your preserved memories now.",
+      "capsule_id": "cap_sealed_soon_02",
+      "is_read": false,
+      "created_at": "2026-11-14T05:59:03.018Z"
+    },
+    {
+      "id": "notif_01",
+      "user_id": "usr_demo_02",
+      "type": "capsule_unlocked",
+      "title": "Capsule Unlocked!",
+      "message": "Your capsule \"Our Pacific Coast Odyssey 2024\" has reached its destination in time.",
+      "capsule_id": "cap_unlocked_01",
+      "is_read": false,
+      "created_at": "2026-11-08T09:44:30.539Z"
+    },
+    {
+      "id": "notif_02",
+      "user_id": "usr_demo_02",
+      "type": "capsule_sealed",
+      "title": "Capsule Sealed in Stasis",
+      "message": "Your capsule \"Letter to My 30th Birthday Self\" is sealed and safely locked.",
+      "capsule_id": "cap_sealed_soon_02",
+      "is_read": true,
+      "created_at": "2026-11-01T09:44:30.539Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "comm_01",
+      "capsule_id": "cap_unlocked_01",
+      "user_id": "usr_contributor_03",
+      "username": "elena_sky",
+      "user_avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+      "content": "This feels like a cinematic movie! That Big Sur sunset is breathtaking.",
+      "created_at": "2026-11-09T09:44:30.539Z"
+    }
+  ],
+  "likes": [
+    {
+      "id": "like_01",
+      "capsule_id": "cap_unlocked_01",
+      "user_id": "usr_contributor_03",
+      "created_at": "2026-11-11T09:44:30.539Z"
+    },
+    {
+      "id": "like_02",
+      "capsule_id": "cap_unlocked_01",
+      "user_id": "usr_admin_01",
+      "created_at": "2026-11-11T09:44:30.539Z"
+    }
+  ],
+  "bookmarks": [],
+  "reports": [],
+  "activity_logs": [
+    {
+      "id": "act_1794636065066_3q2xuz",
+      "user_id": "usr_demo_02",
+      "username": "System",
+      "action": "AUTOMATIC_UNLOCK",
+      "details": "Capsule \"Automated Test Memory Vault\" unlocked on scheduled arrival (2026-11-14T06:01:05.066Z).",
+      "timestamp": "2026-11-14T06:01:05.066Z"
+    },
+    {
+      "id": "act_1794635943018_t03to7",
+      "user_id": "usr_demo_02",
+      "username": "Alex Vance",
+      "action": "AUTOMATIC_UNLOCK",
+      "details": "Capsule \"Letter to My 30th Birthday Self\" unlocked on scheduled arrival (2026-11-14T05:59:03.018Z).",
+      "timestamp": "2026-11-14T05:59:03.018Z"
+    },
+    {
+      "id": "act_1794390299350_1q1b11",
+      "user_id": "usr_demo_02",
+      "username": "System",
+      "action": "AUTOMATIC_UNLOCK",
+      "details": "Capsule \"Automated Test Memory Vault\" unlocked on scheduled arrival (2026-11-11T09:44:59.350Z).",
+      "timestamp": "2026-11-11T09:44:59.350Z"
+    },
+    {
+      "id": "act_01",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_UNLOCKED",
+      "details": "Capsule \"Our Pacific Coast Odyssey 2024\" was automatically unlocked by the scheduler.",
+      "timestamp": "2026-11-08T09:44:30.539Z"
+    },
+    {
+      "id": "act_02",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_SEALED",
+      "details": "Capsule \"Letter to My 30th Birthday Self\" was sealed until unlock date.",
+      "timestamp": "2026-11-01T09:44:30.539Z"
+    }
+  ],
+  "notification_preferences": [
+    {
+      "user_id": "usr_demo_02",
+      "remind_7_days": true,
+      "remind_1_day": true,
+      "remind_on_unlock": true,
+      "email_notifications": true
+    }
+  ]
+}

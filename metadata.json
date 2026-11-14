@@ -1,0 +1,6 @@
+{
+  "name": "Digital Time Capsule",
+  "description": "Capture Today. Preserve Forever. Rediscover Tomorrow. A cinematic, futuristic platform for preserving memories, photos, letters, and audio/video for future rediscovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
