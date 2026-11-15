@@ -15,6 +15,20 @@
       "updated_at": "2026-11-15T09:01:26.000Z"
     },
     {
+      "id": "usr_1794739734497_mvrmwr",
+      "email": "pavan123@gmail.com",
+      "username": "paa",
+      "full_name": "pavan",
+      "avatar_url": "https://api.dicebear.com/7.x/identicon/svg?seed=paa",
+      "bio": "Preserving timeless memories.",
+      "role": "user",
+      "timezone": "UTC",
+      "is_suspended": false,
+      "password_hash": "$2b$10$Te0RJeV13j9bjgU/QdWPG.tsYkw0oUX146p5moWWbq754ahejjKlq",
+      "created_at": "2026-11-15T05:18:54.000Z",
+      "updated_at": "2026-11-15T10:48:54.000Z"
+    },
+    {
       "id": "usr_admin_01",
       "email": "admin@timecapsule.com",
       "username": "admin",
@@ -69,18 +83,6 @@
       "password_hash": "$2b$10$i9xrypjtTjr52/KKRtljruMcz8FMqalipXpVekya.Z.QskbojvqZm",
       "created_at": "2026-11-14T02:50:11.000Z",
       "updated_at": "2026-11-14T08:20:11.000Z"
-    },
-    {
-      "id": "usr_1794739734497_mvrmwr",
-      "email": "pavan123@gmail.com",
-      "username": "paa",
-      "full_name": "pavan",
-      "avatar_url": "https://api.dicebear.com/7.x/identicon/svg?seed=paa",
-      "bio": "Preserving timeless memories.",
-      "role": "user",
-      "timezone": "UTC",
-      "created_at": "2026-11-15T10:48:54.497Z",
-      "password_hash": "$2b$10$Te0RJeV13j9bjgU/QdWPG.tsYkw0oUX146p5moWWbq754ahejjKlq"
     }
   ],
   "capsules": [
@@ -96,10 +98,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-13T09:15:00.000Z",
+      "unlock_at": "2026-11-13T03:45:00.000Z",
       "created_at": "2026-11-14T01:43:48.000Z",
-      "sealed_at": "2026-11-13T09:13:48.000Z",
-      "unlocked_at": "2026-11-13T09:15:06.000Z",
+      "sealed_at": "2026-11-13T03:43:48.000Z",
+      "unlocked_at": "2026-11-13T03:45:06.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     },
@@ -115,10 +117,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-13T09:15:00.000Z",
+      "unlock_at": "2026-11-13T03:45:00.000Z",
       "created_at": "2026-11-14T01:43:56.000Z",
-      "sealed_at": "2026-11-13T09:13:56.000Z",
-      "unlocked_at": "2026-11-13T09:15:06.000Z",
+      "sealed_at": "2026-11-13T03:43:56.000Z",
+      "unlocked_at": "2026-11-13T03:45:06.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     },
@@ -134,10 +136,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-13T09:15:00.000Z",
+      "unlock_at": "2026-11-13T03:45:00.000Z",
       "created_at": "2026-11-14T01:44:03.000Z",
-      "sealed_at": "2026-11-13T09:14:03.000Z",
-      "unlocked_at": "2026-11-13T09:15:06.000Z",
+      "sealed_at": "2026-11-13T03:44:03.000Z",
+      "unlocked_at": "2026-11-13T03:45:06.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     },
@@ -153,10 +155,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-13T09:51:49.000Z",
+      "unlock_at": "2026-11-13T04:21:49.000Z",
       "created_at": "2026-11-14T02:20:50.000Z",
-      "sealed_at": "2026-11-13T09:50:50.000Z",
-      "unlocked_at": "2026-11-13T09:51:50.000Z",
+      "sealed_at": "2026-11-13T04:20:50.000Z",
+      "unlocked_at": "2026-11-13T04:21:50.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     },
@@ -172,10 +174,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-14T22:24:49.000Z",
+      "unlock_at": "2026-11-14T16:54:49.000Z",
       "created_at": "2026-11-15T03:53:50.000Z",
-      "sealed_at": "2026-11-14T22:23:50.000Z",
-      "unlocked_at": "2026-11-14T22:24:52.000Z",
+      "sealed_at": "2026-11-14T16:53:50.000Z",
+      "unlocked_at": "2026-11-14T16:54:52.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -191,10 +193,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-14T22:29:02.000Z",
+      "unlock_at": "2026-11-14T16:59:02.000Z",
       "created_at": "2026-11-15T03:58:02.000Z",
-      "sealed_at": "2026-11-14T22:28:02.000Z",
-      "unlocked_at": "2026-11-14T22:29:08.000Z",
+      "sealed_at": "2026-11-14T16:58:02.000Z",
+      "unlocked_at": "2026-11-14T16:59:08.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -210,10 +212,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-14T22:31:45.000Z",
+      "unlock_at": "2026-11-14T17:01:45.000Z",
       "created_at": "2026-11-15T04:00:45.000Z",
-      "sealed_at": "2026-11-14T22:30:45.000Z",
-      "unlocked_at": "2026-11-14T22:31:48.000Z",
+      "sealed_at": "2026-11-14T17:00:45.000Z",
+      "unlocked_at": "2026-11-14T17:01:48.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -229,10 +231,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-15T04:19:34.000Z",
+      "unlock_at": "2026-11-14T22:49:34.000Z",
       "created_at": "2026-11-15T04:18:34.000Z",
-      "sealed_at": "2026-11-15T04:18:34.000Z",
-      "unlocked_at": "2026-11-15T04:19:35.000Z",
+      "sealed_at": "2026-11-14T22:48:34.000Z",
+      "unlocked_at": "2026-11-14T22:49:35.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -248,10 +250,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-15T04:21:19.000Z",
+      "unlock_at": "2026-11-14T22:51:19.000Z",
       "created_at": "2026-11-15T04:20:19.000Z",
-      "sealed_at": "2026-11-15T04:20:19.000Z",
-      "unlocked_at": "2026-11-15T04:21:27.000Z",
+      "sealed_at": "2026-11-14T22:50:19.000Z",
+      "unlocked_at": "2026-11-14T22:51:27.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -267,7 +269,7 @@
       "theme": "aurora-pink",
       "status": "draft",
       "visibility": "private",
-      "unlock_at": "2027-05-09T11:44:30.000Z",
+      "unlock_at": "2027-05-09T06:14:30.000Z",
       "created_at": "2026-11-10T04:14:30.000Z",
       "sealed_at": null,
       "unlocked_at": null,
@@ -286,10 +288,10 @@
       "theme": "neon-purple",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-10T11:47:30.000Z",
+      "unlock_at": "2026-11-10T06:17:30.000Z",
       "created_at": "2026-11-01T04:14:30.000Z",
-      "sealed_at": "2026-10-31T11:44:30.000Z",
-      "unlocked_at": "2026-11-13T07:59:03.000Z",
+      "sealed_at": "2026-10-31T06:14:30.000Z",
+      "unlocked_at": "2026-11-13T02:29:03.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     },
@@ -305,9 +307,9 @@
       "theme": "cosmic-cyan",
       "status": "sealed",
       "visibility": "shared",
-      "unlock_at": "2027-11-10T11:44:30.000Z",
+      "unlock_at": "2027-11-10T06:14:30.000Z",
       "created_at": "2026-11-06T04:14:30.000Z",
-      "sealed_at": "2026-11-05T11:44:30.000Z",
+      "sealed_at": "2026-11-05T06:14:30.000Z",
       "unlocked_at": null,
       "timezone": "America/New_York",
       "is_archived": false
@@ -324,10 +326,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "public",
-      "unlock_at": "2026-11-07T11:44:30.000Z",
+      "unlock_at": "2026-11-07T06:14:30.000Z",
       "created_at": "2026-09-27T04:14:30.000Z",
-      "sealed_at": "2026-09-26T11:44:30.000Z",
-      "unlocked_at": "2026-11-07T11:44:30.000Z",
+      "sealed_at": "2026-09-26T06:14:30.000Z",
+      "unlocked_at": "2026-11-07T06:14:30.000Z",
       "timezone": "America/New_York",
       "is_archived": false
     }
@@ -539,7 +541,7 @@
       "content": "Dear Future Self,\n\nIf you are reading this, time has slipped past like sand through cupped hands. \nRemember the salt spray in Monterey? Remember how we promised we wouldn't settle into comfortable numbness?\n\nRight now, as I write this, you were terrified of taking risks, yet you packed two bags and drove into the unknown. I hope you still look up at the stars with that exact reverence. I hope you haven't forgotten how laughter sounds when your ribs ache.\n\nKeep building. Keep trusting. Keep wandering.\n\nWith unconditional love,\nYour 2024 Self",
       "prompt_used": "What do you hope your future self remembers?",
       "created_at": "2026-09-27T04:14:30.000Z",
-      "updated_at": "2026-09-26T11:44:30.000Z"
+      "updated_at": "2026-09-26T06:14:30.000Z"
     },
     {
       "id": "let_02",
@@ -550,7 +552,7 @@
       "content": "Hello Alex!\nToday you turn a new chapter. We worried so much about having everything figured out. Did we solve the puzzle? Probably not, and that is okay. Celebrate this day with people who genuinely care about your peace of mind.",
       "prompt_used": "What are your biggest dreams?",
       "created_at": "2026-11-01T04:14:30.000Z",
-      "updated_at": "2026-10-31T11:44:30.000Z"
+      "updated_at": "2026-10-31T06:14:30.000Z"
     },
     {
       "id": "let_1794642650166_ckseth",
@@ -561,7 +563,7 @@
       "content": "ergt",
       "prompt_used": "What is happening in your life right now?",
       "created_at": "2026-11-14T02:20:50.000Z",
-      "updated_at": "2026-11-13T09:50:50.000Z"
+      "updated_at": "2026-11-13T04:20:50.000Z"
     },
     {
       "id": "let_1794734630393_p2sm3e",
@@ -572,7 +574,7 @@
       "content": "its our state festival",
       "prompt_used": "What do you hope your future self remembers?",
       "created_at": "2026-11-15T03:53:50.000Z",
-      "updated_at": "2026-11-14T22:23:50.000Z"
+      "updated_at": "2026-11-14T16:53:50.000Z"
     },
     {
       "id": "let_1794734882215_caawuo",
@@ -583,7 +585,7 @@
       "content": "sd",
       "prompt_used": "What is happening in your life right now?",
       "created_at": "2026-11-15T03:58:02.000Z",
-      "updated_at": "2026-11-14T22:28:02.000Z"
+      "updated_at": "2026-11-14T16:58:02.000Z"
     },
     {
       "id": "let_1794736219717_qhndzd",
@@ -594,7 +596,7 @@
       "content": "kg",
       "prompt_used": "What is happening in your life right now?",
       "created_at": "2026-11-15T04:20:19.000Z",
-      "updated_at": "2026-11-15T04:20:19.000Z"
+      "updated_at": "2026-11-14T22:50:19.000Z"
     }
   ],
   "capsule_members": [
@@ -651,6 +653,16 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif_1794739734497_welcome",
+      "user_id": "usr_1794739734497_mvrmwr",
+      "type": "system",
+      "title": "Welcome to Digital Time Capsule!",
+      "message": "Start by creating your first capsule, upload memories, and seal your time-travel vault.",
+      "capsule_id": null,
+      "is_read": false,
+      "created_at": "2026-11-15T05:18:54.000Z"
+    },
     {
       "id": "notif_1794736287314_6ca50w",
       "user_id": "usr_1794733286231_jown35",
@@ -840,15 +852,6 @@
       "capsule_id": "cap_sealed_soon_02",
       "is_read": true,
       "created_at": "2026-11-01T04:14:30.000Z"
-    },
-    {
-      "id": "notif_1794739734497_welcome",
-      "user_id": "usr_1794739734497_mvrmwr",
-      "type": "system",
-      "title": "Welcome to Digital Time Capsule!",
-      "message": "Start by creating your first capsule, upload memories, and seal your time-travel vault.",
-      "is_read": false,
-      "created_at": "2026-11-15T10:48:54.497Z"
     }
   ],
   "comments": [
@@ -885,7 +888,7 @@
       "username": "paa",
       "action": "USER_REGISTERED",
       "details": "User registered account pavan123@gmail.com",
-      "timestamp": "2026-11-15T10:48:54.497Z"
+      "timestamp": "2026-11-15T05:18:54.000Z"
     },
     {
       "id": "act_1794736287317_r7tw83",
@@ -896,19 +899,19 @@
       "timestamp": "2026-11-15T04:21:27.000Z"
     },
     {
-      "id": "act_1794736219717_8ril4y",
-      "user_id": "usr_1794733286231_jown35",
-      "username": "hello",
-      "action": "CAPSULE_CREATED",
-      "details": "Created capsule \"jhv\" (Status: draft)",
-      "timestamp": "2026-11-15T04:20:19.000Z"
-    },
-    {
       "id": "act_1794736219784_14msf1",
       "user_id": "usr_1794733286231_jown35",
       "username": "hello",
       "action": "CAPSULE_SEALED",
       "details": "Sealed capsule \"jhv\"",
+      "timestamp": "2026-11-15T04:20:19.000Z"
+    },
+    {
+      "id": "act_1794736219717_8ril4y",
+      "user_id": "usr_1794733286231_jown35",
+      "username": "hello",
+      "action": "CAPSULE_CREATED",
+      "details": "Created capsule \"jhv\" (Status: draft)",
       "timestamp": "2026-11-15T04:20:19.000Z"
     },
     {
@@ -1000,19 +1003,19 @@
       "timestamp": "2026-11-15T03:59:08.000Z"
     },
     {
-      "id": "act_1794734882342_wmcpbd",
-      "user_id": "usr_1794733286231_jown35",
-      "username": "hello",
-      "action": "CAPSULE_SEALED",
-      "details": "Sealed capsule \"dsd\"",
-      "timestamp": "2026-11-15T03:58:02.000Z"
-    },
-    {
       "id": "act_1794734882215_gr0cyd",
       "user_id": "usr_1794733286231_jown35",
       "username": "hello",
       "action": "CAPSULE_CREATED",
       "details": "Created capsule \"dsd\" (Status: draft)",
+      "timestamp": "2026-11-15T03:58:02.000Z"
+    },
+    {
+      "id": "act_1794734882342_wmcpbd",
+      "user_id": "usr_1794733286231_jown35",
+      "username": "hello",
+      "action": "CAPSULE_SEALED",
+      "details": "Sealed capsule \"dsd\"",
       "timestamp": "2026-11-15T03:58:02.000Z"
     },
     {
@@ -1177,14 +1180,14 @@
       "email_notifications": true
     },
     {
-      "user_id": "usr_demo_02",
+      "user_id": "usr_1794739734497_mvrmwr",
       "remind_7_days": true,
       "remind_1_day": true,
       "remind_on_unlock": true,
       "email_notifications": true
     },
     {
-      "user_id": "usr_1794739734497_mvrmwr",
+      "user_id": "usr_demo_02",
       "remind_7_days": true,
       "remind_1_day": true,
       "remind_on_unlock": true,
