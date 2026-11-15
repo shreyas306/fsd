@@ -3,11 +3,18 @@ import bcrypt from "bcryptjs";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { OAuth2Client } from "google-auth-library";
 import { db } from "./db.js";
 import { requireAuth, optionalAuth, requireAdmin, generateToken } from "./auth.js";
 import { notifySealOpened } from "./notificationService.js";
 import { findUserByEmailFromMySQL, isMySQLConnected } from "./mysql.js";
 const router = Router();
+// Lazily-created Google OAuth2 client (only used if GOOGLE_CLIENT_ID is set)
+function getGoogleClient() {
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  if (!clientId || clientId.includes("your-google")) return null;
+  return new OAuth2Client(clientId);
+}
 const uploadsDir = path.resolve(process.cwd(), "uploads");
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
@@ -128,24 +135,51 @@ router.get("/auth/google-config", (req, res) => {
 
 router.post("/auth/google", async (req, res) => {
   let { email, name, avatar, credential } = req.body;
+
+  // --- Step 1: If a real Google credential (ID token) is provided, verify it ---
   if (credential) {
-    try {
-      const parts = credential.split(".");
-      if (parts.length === 3) {
-        const payloadJson = Buffer.from(parts[1], "base64").toString("utf-8");
-        const googlePayload = JSON.parse(payloadJson);
-        if (googlePayload.email) {
-          email = googlePayload.email;
-          name = googlePayload.name || googlePayload.given_name || name;
-          avatar = googlePayload.picture || avatar;
+    const googleClient = getGoogleClient();
+    if (googleClient) {
+      try {
+        const ticket = await googleClient.verifyIdToken({
+          idToken: credential,
+          audience: process.env.GOOGLE_CLIENT_ID,
+        });
+        const payload = ticket.getPayload();
+        if (!payload || !payload.email_verified) {
+          return res.status(401).json({ error: "Google token verification failed or email not verified." });
         }
+        email  = payload.email;
+        name   = payload.name || payload.given_name || name;
+        avatar = payload.picture || avatar;
+      } catch (err) {
+        console.error("[Google Auth] Token verification failed:", err.message);
+        return res.status(401).json({ error: "Invalid Google credential token. Please try signing in again." });
       }
-    } catch (err) {
-      console.warn("[Google Auth] Error decoding credential:", err.message);
+    } else {
+      // GOOGLE_CLIENT_ID not set — safely decode without verifying (dev/demo mode only)
+      try {
+        const parts = credential.split(".");
+        if (parts.length === 3) {
+          const payloadJson = Buffer.from(parts[1], "base64url").toString("utf-8");
+          const googlePayload = JSON.parse(payloadJson);
+          if (googlePayload.email) {
+            email  = googlePayload.email;
+            name   = googlePayload.name || googlePayload.given_name || name;
+            avatar = googlePayload.picture || avatar;
+          }
+        }
+      } catch (err) {
+        console.warn("[Google Auth] Error decoding credential (no client ID set):", err.message);
+      }
     }
   }
 
-  const targetEmail = (email || "google_traveler@timecapsule.com").toLowerCase().trim();
+  if (!email) {
+    return res.status(400).json({ error: "Google sign-in failed: no email received. Please try again." });
+  }
+
+  const targetEmail = email.toLowerCase().trim();
   const data = db.getData();
   let user = data.users.find((u) => u.email.toLowerCase() === targetEmail);
   if (!user && isMySQLConnected()) {
@@ -189,6 +223,10 @@ router.post("/auth/google", async (req, res) => {
       created_at: new Date().toISOString()
     });
     logActivity(user.id, user.username, "USER_GOOGLE_AUTH", `User authenticated via Google (${targetEmail})`);
+    db.save();
+  } else if (avatar && !user.avatar_url?.includes("dicebear") && user.avatar_url !== avatar) {
+    // Keep avatar in sync if it changed
+    user.avatar_url = avatar;
     db.save();
   }
 
@@ -448,6 +486,7 @@ router.post("/capsules/:id/force-unlock", requireAuth, async (req, res) => {
   }
   capsule.status = "unlocked";
   capsule.unlocked_at = (new Date()).toISOString();
+  db.save();
   await notifySealOpened(capsule, req.user);
   return res.json({ capsule, message: "Capsule seal has been opened and broadcast notifications dispatched!" });
 });
@@ -462,6 +501,7 @@ router.post("/capsules/:id/open-seal", requireAuth, async (req, res) => {
   }
   capsule.status = "unlocked";
   capsule.unlocked_at = (new Date()).toISOString();
+  db.save();
   const result = await notifySealOpened(capsule, req.user);
   return res.json({ capsule, message: "Capsule seal opened! Broadcast notifications sent.", notifiedCount: result.notifiedCount });
 });

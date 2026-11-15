@@ -11,8 +11,9 @@ import {
   Video,
   Music,
   File,
-  Shield,
-  Eye
+  Users,
+  Globe,
+  CheckCircle2
 } from "lucide-react";
 const CATEGORIES = [
   "Personal",
@@ -583,52 +584,204 @@ Dear Future Me,
             </div>
           </div>}
 
-        {
-    /* STEP 5: PRIVACY SETTINGS */
-  }
+        {/* STEP 5: PRIVACY SETTINGS */}
         {currentStep === 5 && <div className="space-y-6">
             <div className="border-b border-slate-800 pb-3">
               <h2 className="text-lg font-bold text-white">Step 5: Privacy Protocol</h2>
               <p className="text-xs text-slate-400">Configure who has access to this capsule upon unlock.</p>
             </div>
 
-            <div className="space-y-4">
-              {[
-    {
-      id: "private",
-      title: "Private Stasis (Keeper Only)",
-      desc: "Only you can view and open the capsule after unlocking. Highest confidentiality.",
-      icon: Lock,
-      color: "text-purple-400"
-    },
-    {
-      id: "shared",
-      title: "Collaborative Circle (Shared)",
-      desc: "Invited friends and family can contribute before sealing and access the memories upon unlocking.",
-      icon: Shield,
-      color: "text-cyan-400"
-    },
-    {
-      id: "public",
-      title: "Public Legacy (Explore Feed)",
-      desc: "When unlocked, this capsule will be discoverable in the public Explore directory for other travelers.",
-      icon: Eye,
-      color: "text-pink-400"
-    }
-  ].map((opt) => <div
-    key={opt.id}
-    onClick={() => setVisibility(opt.id)}
-    className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-start space-x-4 ${visibility === opt.id ? "border-purple-400 bg-purple-950/40 text-white shadow-lg" : "border-slate-800 bg-slate-900/60 text-slate-400 hover:text-slate-200"}`}
-  >
-                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-800 mt-0.5">
-                    <opt.icon className={`w-5 h-5 ${opt.color}`} />
+            <div className="grid grid-cols-1 gap-4">
+
+              {/* --- PRIVATE --- */}
+              <div
+                onClick={() => setVisibility("private")}
+                className={`relative rounded-2xl border-2 cursor-pointer transition-all duration-200 overflow-hidden
+                  ${visibility === "private"
+                    ? "border-purple-500 shadow-[0_0_28px_rgba(139,92,246,0.35)]"
+                    : "border-slate-700 hover:border-purple-500/40"
+                  }`}
+              >
+                {/* Accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-t-2xl" />
+
+                <div className={`p-5 pt-6 transition-colors duration-200 ${visibility === "private" ? "bg-purple-950/50" : "bg-slate-900/60"}`}>
+                  <div className="flex items-start space-x-4">
+                    {/* Icon */}
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-all
+                      ${visibility === "private"
+                        ? "bg-purple-600 shadow-purple-500/40"
+                        : "bg-slate-800 border border-slate-700"
+                      }`}>
+                      <Lock className="w-6 h-6 text-white" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-purple-400">Most Secure</span>
+                          <h4 className="text-base font-extrabold text-white leading-tight">Private Stasis</h4>
+                          <p className="text-xs text-slate-400 mt-0.5">Keeper only — full confidentiality</p>
+                        </div>
+                        {visibility === "private" && (
+                          <span className="flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-purple-600/30 border border-purple-500/50 text-purple-200">
+                            <CheckCircle2 className="w-3 h-3" />
+                            <span>Selected</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                        Only <strong className="text-purple-300">you</strong> can view, open, and read this capsule after unlocking. No one else will ever see it.
+                      </p>
+
+                      {/* Feature pills */}
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {["👁 Only you can open", "🔒 Encrypted & hidden", "✗ No sharing"].map(f => (
+                          <span key={f} className={`text-[11px] px-2 py-0.5 rounded-full border font-medium
+                            ${visibility === "private"
+                              ? "bg-purple-900/60 border-purple-500/40 text-purple-200"
+                              : "bg-slate-800 border-slate-700 text-slate-400"
+                            }`}>
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="text-sm font-bold text-white">{opt.title}</h4>
-                    <p className="text-xs text-slate-400">{opt.desc}</p>
+                </div>
+              </div>
+
+              {/* --- SHARED --- */}
+              <div
+                onClick={() => setVisibility("shared")}
+                className={`relative rounded-2xl border-2 cursor-pointer transition-all duration-200 overflow-hidden
+                  ${visibility === "shared"
+                    ? "border-cyan-500 shadow-[0_0_28px_rgba(6,182,212,0.3)]"
+                    : "border-slate-700 hover:border-cyan-500/40"
+                  }`}
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-teal-400 rounded-t-2xl" />
+
+                <div className={`p-5 pt-6 transition-colors duration-200 ${visibility === "shared" ? "bg-cyan-950/40" : "bg-slate-900/60"}`}>
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-all
+                      ${visibility === "shared"
+                        ? "bg-cyan-600 shadow-cyan-500/40"
+                        : "bg-slate-800 border border-slate-700"
+                      }`}>
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-cyan-400">Collaborative</span>
+                          <h4 className="text-base font-extrabold text-white leading-tight">Shared Circle</h4>
+                          <p className="text-xs text-slate-400 mt-0.5">Invite friends & family to contribute</p>
+                        </div>
+                        {visibility === "shared" && (
+                          <span className="flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-200">
+                            <CheckCircle2 className="w-3 h-3" />
+                            <span>Selected</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                        <strong className="text-cyan-300">Invited collaborators</strong> can upload memories before sealing and view contents after unlock. Perfect for group projects, family albums, or friend vaults.
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {["👥 Invite collaborators", "📸 Group contributions", "🔓 Access on unlock"].map(f => (
+                          <span key={f} className={`text-[11px] px-2 py-0.5 rounded-full border font-medium
+                            ${visibility === "shared"
+                              ? "bg-cyan-900/60 border-cyan-500/40 text-cyan-200"
+                              : "bg-slate-800 border-slate-700 text-slate-400"
+                            }`}>
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>)}
+                </div>
+              </div>
+
+              {/* --- PUBLIC --- */}
+              <div
+                onClick={() => setVisibility("public")}
+                className={`relative rounded-2xl border-2 cursor-pointer transition-all duration-200 overflow-hidden
+                  ${visibility === "public"
+                    ? "border-pink-500 shadow-[0_0_28px_rgba(236,72,153,0.3)]"
+                    : "border-slate-700 hover:border-pink-500/40"
+                  }`}
+              >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-orange-400 rounded-t-2xl" />
+
+                <div className={`p-5 pt-6 transition-colors duration-200 ${visibility === "public" ? "bg-pink-950/30" : "bg-slate-900/60"}`}>
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-all
+                      ${visibility === "public"
+                        ? "bg-pink-600 shadow-pink-500/40"
+                        : "bg-slate-800 border border-slate-700"
+                      }`}>
+                      <Globe className="w-6 h-6 text-white" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-pink-400">Public Legacy</span>
+                          <h4 className="text-base font-extrabold text-white leading-tight">Explore Feed</h4>
+                          <p className="text-xs text-slate-400 mt-0.5">Share your story with the world</p>
+                        </div>
+                        {visibility === "public" && (
+                          <span className="flex items-center space-x-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-pink-600/30 border border-pink-500/50 text-pink-200">
+                            <CheckCircle2 className="w-3 h-3" />
+                            <span>Selected</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                        After unlocking, this capsule appears in the <strong className="text-pink-300">public Explore directory</strong>. Anyone can discover it, like it, and leave comments — inspiring other travelers in time.
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {["🌍 Publicly discoverable", "❤️ Likes & comments", "📢 Explore directory"].map(f => (
+                          <span key={f} className={`text-[11px] px-2 py-0.5 rounded-full border font-medium
+                            ${visibility === "public"
+                              ? "bg-pink-900/60 border-pink-500/40 text-pink-200"
+                              : "bg-slate-800 border-slate-700 text-slate-400"
+                            }`}>
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
+
+            {/* Summary hint */}
+            <div className={`p-3 rounded-xl border text-xs flex items-start space-x-2 transition-all
+              ${visibility === "private" ? "bg-purple-950/30 border-purple-500/30 text-purple-300"
+                : visibility === "shared" ? "bg-cyan-950/30 border-cyan-500/30 text-cyan-300"
+                : "bg-pink-950/30 border-pink-500/30 text-pink-300"
+              }`}>
+              {visibility === "private" && <Lock className="w-4 h-4 flex-shrink-0 mt-0.5" />}
+              {visibility === "shared"  && <Users className="w-4 h-4 flex-shrink-0 mt-0.5" />}
+              {visibility === "public"  && <Globe className="w-4 h-4 flex-shrink-0 mt-0.5" />}
+              <span>
+                {visibility === "private" && "Your capsule will be completely private. Only you will ever be able to open it."}
+                {visibility === "shared"  && "You'll be able to invite collaborators in the next step after creating the capsule."}
+                {visibility === "public"  && "Your capsule and its memories will appear publicly in the Explore feed after unlocking."}
+              </span>
+            </div>
+
           </div>}
 
         {

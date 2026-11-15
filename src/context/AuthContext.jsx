@@ -38,13 +38,14 @@ const AuthProvider = ({ children }) => {
       setIsLoading(false);
     }
   };
-  const googleLogin = async (email, name, avatar) => {
+  const googleLogin = async (credential) => {
     setIsLoading(true);
     try {
-      const data = await api.auth.googleLogin({ email, name, avatar });
+      const data = await api.auth.googleLogin({ credential });
       setStoredToken(data.token);
       setToken(data.token);
       setUser(data.user);
+      return data;
     } finally {
       setIsLoading(false);
     }
