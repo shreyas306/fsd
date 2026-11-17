@@ -9,10 +9,10 @@
       "bio": "Preserving timeless memories.",
       "role": "user",
       "timezone": "UTC",
-      "is_suspended": false,
+      "is_suspended": true,
       "password_hash": "$2b$10$ddXTYz5ogBRZVWjqQwUDxuJnzqBg5WdKJjwhubOGCmgiJZbqVR7Oq",
       "created_at": "2026-11-15T03:31:26.000Z",
-      "updated_at": "2026-11-15T09:01:26.000Z"
+      "updated_at": "2026-11-16T16:06:15.000Z"
     },
     {
       "id": "usr_1794739734497_mvrmwr",
@@ -51,10 +51,10 @@
       "bio": "Wanderer across mountain trails and old books.",
       "role": "user",
       "timezone": "Europe/London",
-      "is_suspended": false,
+      "is_suspended": true,
       "password_hash": "$2b$10$GGScXing/86M0Wj06F5p3OI2Fsq/55dsqdop.6f51oGKf9xfBVfPe",
       "created_at": "2026-10-17T04:14:30.000Z",
-      "updated_at": "2026-11-14T07:52:17.000Z"
+      "updated_at": "2026-11-16T16:06:49.000Z"
     },
     {
       "id": "usr_demo_02",
@@ -87,80 +87,23 @@
   ],
   "capsules": [
     {
-      "id": "cap_1794640428792_jy6doe",
+      "id": "cap_1794891720178_2rlutj",
       "owner_id": "usr_demo_02",
       "owner_name": "Alex Vance",
       "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "tct",
-      "description": null,
+      "title": "aed",
+      "description": "",
       "category": "Personal",
       "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
       "theme": "cosmic-cyan",
       "status": "unlocked",
-      "visibility": "shared",
-      "unlock_at": "2026-11-13T03:45:00.000Z",
-      "created_at": "2026-11-14T01:43:48.000Z",
-      "sealed_at": "2026-11-13T03:43:48.000Z",
-      "unlocked_at": "2026-11-13T03:45:06.000Z",
+      "visibility": "private",
+      "unlock_at": "2026-11-17T05:03:00.174Z",
+      "created_at": "2026-11-17T05:02:00.178Z",
+      "sealed_at": "2026-11-17T05:02:00.342Z",
       "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_1794640436540_k8kanf",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "tct",
-      "description": null,
-      "category": "Personal",
-      "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
-      "theme": "cosmic-cyan",
-      "status": "unlocked",
-      "visibility": "shared",
-      "unlock_at": "2026-11-13T03:45:00.000Z",
-      "created_at": "2026-11-14T01:43:56.000Z",
-      "sealed_at": "2026-11-13T03:43:56.000Z",
-      "unlocked_at": "2026-11-13T03:45:06.000Z",
-      "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_1794640443188_8gcncd",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "tct",
-      "description": null,
-      "category": "Personal",
-      "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
-      "theme": "cosmic-cyan",
-      "status": "unlocked",
-      "visibility": "shared",
-      "unlock_at": "2026-11-13T03:45:00.000Z",
-      "created_at": "2026-11-14T01:44:03.000Z",
-      "sealed_at": "2026-11-13T03:44:03.000Z",
-      "unlocked_at": "2026-11-13T03:45:06.000Z",
-      "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_1794642650166_jers5i",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "df",
-      "description": null,
-      "category": "Personal",
-      "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
-      "theme": "cosmic-cyan",
-      "status": "unlocked",
-      "visibility": "shared",
-      "unlock_at": "2026-11-13T04:21:49.000Z",
-      "created_at": "2026-11-14T02:20:50.000Z",
-      "sealed_at": "2026-11-13T04:20:50.000Z",
-      "unlocked_at": "2026-11-13T04:21:50.000Z",
-      "timezone": "America/New_York",
-      "is_archived": false
+      "is_archived": false,
+      "unlocked_at": "2026-11-17T05:03:04.434Z"
     },
     {
       "id": "cap_1794734630393_t5tr7s",
@@ -174,10 +117,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-14T16:54:49.000Z",
+      "unlock_at": "2026-11-14T00:24:49.000Z",
       "created_at": "2026-11-15T03:53:50.000Z",
-      "sealed_at": "2026-11-14T16:53:50.000Z",
-      "unlocked_at": "2026-11-14T16:54:52.000Z",
+      "sealed_at": "2026-11-14T00:23:50.000Z",
+      "unlocked_at": "2026-11-14T00:24:52.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -193,10 +136,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-14T16:59:02.000Z",
+      "unlock_at": "2026-11-14T00:29:02.000Z",
       "created_at": "2026-11-15T03:58:02.000Z",
-      "sealed_at": "2026-11-14T16:58:02.000Z",
-      "unlocked_at": "2026-11-14T16:59:08.000Z",
+      "sealed_at": "2026-11-14T00:28:02.000Z",
+      "unlocked_at": "2026-11-14T00:29:08.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -212,10 +155,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-14T17:01:45.000Z",
+      "unlock_at": "2026-11-14T00:31:45.000Z",
       "created_at": "2026-11-15T04:00:45.000Z",
-      "sealed_at": "2026-11-14T17:00:45.000Z",
-      "unlocked_at": "2026-11-14T17:01:48.000Z",
+      "sealed_at": "2026-11-14T00:30:45.000Z",
+      "unlocked_at": "2026-11-14T00:31:48.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -231,10 +174,10 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "shared",
-      "unlock_at": "2026-11-14T22:49:34.000Z",
+      "unlock_at": "2026-11-14T06:19:34.000Z",
       "created_at": "2026-11-15T04:18:34.000Z",
-      "sealed_at": "2026-11-14T22:48:34.000Z",
-      "unlocked_at": "2026-11-14T22:49:35.000Z",
+      "sealed_at": "2026-11-14T06:18:34.000Z",
+      "unlocked_at": "2026-11-14T06:19:35.000Z",
       "timezone": "UTC",
       "is_archived": false
     },
@@ -250,211 +193,15 @@
       "theme": "cosmic-cyan",
       "status": "unlocked",
       "visibility": "private",
-      "unlock_at": "2026-11-14T22:51:19.000Z",
+      "unlock_at": "2026-11-14T06:21:19.000Z",
       "created_at": "2026-11-15T04:20:19.000Z",
-      "sealed_at": "2026-11-14T22:50:19.000Z",
-      "unlocked_at": "2026-11-14T22:51:27.000Z",
+      "sealed_at": "2026-11-14T06:20:19.000Z",
+      "unlocked_at": "2026-11-14T06:21:27.000Z",
       "timezone": "UTC",
-      "is_archived": false
-    },
-    {
-      "id": "cap_draft_04",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "Graduation Summer Vibes",
-      "description": "Draft notes and photos from our graduation ceremony.",
-      "category": "Graduation",
-      "cover_image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80",
-      "theme": "aurora-pink",
-      "status": "draft",
-      "visibility": "private",
-      "unlock_at": "2027-05-09T06:14:30.000Z",
-      "created_at": "2026-11-10T04:14:30.000Z",
-      "sealed_at": null,
-      "unlocked_at": null,
-      "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_sealed_soon_02",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "Letter to My 30th Birthday Self",
-      "description": "Reflections on ambition, fear, love, and what matters most.",
-      "category": "Personal",
-      "cover_image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
-      "theme": "neon-purple",
-      "status": "unlocked",
-      "visibility": "private",
-      "unlock_at": "2026-11-10T06:17:30.000Z",
-      "created_at": "2026-11-01T04:14:30.000Z",
-      "sealed_at": "2026-10-31T06:14:30.000Z",
-      "unlocked_at": "2026-11-13T02:29:03.000Z",
-      "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_shared_03",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "Starlight Expedition: Founders Vault",
-      "description": "Our first year building the company together. Hidden thoughts and promises.",
-      "category": "Special Moments",
-      "cover_image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
-      "theme": "cosmic-cyan",
-      "status": "sealed",
-      "visibility": "shared",
-      "unlock_at": "2027-11-10T06:14:30.000Z",
-      "created_at": "2026-11-06T04:14:30.000Z",
-      "sealed_at": "2026-11-05T06:14:30.000Z",
-      "unlocked_at": null,
-      "timezone": "America/New_York",
-      "is_archived": false
-    },
-    {
-      "id": "cap_unlocked_01",
-      "owner_id": "usr_demo_02",
-      "owner_name": "Alex Vance",
-      "owner_avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
-      "title": "Our Pacific Coast Odyssey 2024",
-      "description": "A 2,000-mile road trip down Highway 1. Sealed when we felt on top of the world.",
-      "category": "Travel",
-      "cover_image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
-      "theme": "cosmic-cyan",
-      "status": "unlocked",
-      "visibility": "public",
-      "unlock_at": "2026-11-07T06:14:30.000Z",
-      "created_at": "2026-09-27T04:14:30.000Z",
-      "sealed_at": "2026-09-26T06:14:30.000Z",
-      "unlocked_at": "2026-11-07T06:14:30.000Z",
-      "timezone": "America/New_York",
       "is_archived": false
     }
   ],
   "memories": [
-    {
-      "id": "mem_01",
-      "capsule_id": "cap_unlocked_01",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "Big_Sur_Sunset.jpg",
-      "file_type": "image",
-      "mime_type": "image/jpeg",
-      "storage_path": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
-      "file_size": 2450000,
-      "caption": "The moment the sun touched the Pacific at Big Sur cliff.",
-      "description": "We had been driving for 7 hours, windows down, salty air filling the cabin.",
-      "is_favorite": true,
-      "created_at": "2026-09-27T04:14:30.000Z"
-    },
-    {
-      "id": "mem_02",
-      "capsule_id": "cap_unlocked_01",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "Redwood_Canopy_Walk.jpg",
-      "file_type": "image",
-      "mime_type": "image/jpeg",
-      "storage_path": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
-      "file_size": 3100000,
-      "caption": "Walking amongst giants older than civilization itself.",
-      "description": "Felt tiny and at peace.",
-      "is_favorite": true,
-      "created_at": "2026-09-28T04:14:30.000Z"
-    },
-    {
-      "id": "mem_03",
-      "capsule_id": "cap_unlocked_01",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "Campfire_Acoustic_Jam.mp3",
-      "file_type": "audio",
-      "mime_type": "audio/mpeg",
-      "storage_path": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      "file_size": 4200000,
-      "caption": "Acoustic jam by the fire under Orion constellation.",
-      "description": "Recorded directly on phone microphone.",
-      "is_favorite": false,
-      "created_at": "2026-09-29T04:14:30.000Z"
-    },
-    {
-      "id": "mem_04",
-      "capsule_id": "cap_sealed_soon_02",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "Desk_Setup_At_Midnight.jpg",
-      "file_type": "image",
-      "mime_type": "image/jpeg",
-      "storage_path": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80",
-      "file_size": 1980000,
-      "caption": "Where all the midnight coding and dreaming happened.",
-      "description": "Coffee mug stained with dark roast, screen glowing violet.",
-      "is_favorite": false,
-      "created_at": "2026-11-01T04:14:30.000Z"
-    },
-    {
-      "id": "mem_1794640432317_th7w3u",
-      "capsule_id": "cap_1794640428792_jy6doe",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "dasara.webp",
-      "file_type": "image",
-      "mime_type": "image/webp",
-      "storage_path": "/uploads/mem_1794640429022-187094708.webp",
-      "file_size": 11010,
-      "caption": null,
-      "description": null,
-      "is_favorite": false,
-      "created_at": "2026-11-14T01:43:52.000Z"
-    },
-    {
-      "id": "mem_1794640437548_rpw43s",
-      "capsule_id": "cap_1794640436540_k8kanf",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "dasara.webp",
-      "file_type": "image",
-      "mime_type": "image/webp",
-      "storage_path": "/uploads/mem_1794640436988-664121509.webp",
-      "file_size": 11010,
-      "caption": null,
-      "description": null,
-      "is_favorite": false,
-      "created_at": "2026-11-14T01:43:57.000Z"
-    },
-    {
-      "id": "mem_1794640443919_h1wjr6",
-      "capsule_id": "cap_1794640443188_8gcncd",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "dasara.webp",
-      "file_type": "image",
-      "mime_type": "image/webp",
-      "storage_path": "/uploads/mem_1794640443337-113022893.webp",
-      "file_size": 11010,
-      "caption": null,
-      "description": null,
-      "is_favorite": false,
-      "created_at": "2026-11-14T01:44:03.000Z"
-    },
-    {
-      "id": "mem_1794642650300_ob8vju",
-      "capsule_id": "cap_1794642650166_jers5i",
-      "uploaded_by": "usr_demo_02",
-      "uploader_name": "Alex Vance",
-      "file_name": "dasara.webp",
-      "file_type": "image",
-      "mime_type": "image/webp",
-      "storage_path": "/uploads/mem_1794642650195-426067718.webp",
-      "file_size": 11010,
-      "caption": null,
-      "description": null,
-      "is_favorite": false,
-      "created_at": "2026-11-14T02:20:50.000Z"
-    },
     {
       "id": "mem_1794734630436_p1u77q",
       "capsule_id": "cap_1794734630393_t5tr7s",
@@ -529,42 +276,24 @@
       "description": null,
       "is_favorite": false,
       "created_at": "2026-11-15T04:20:19.000Z"
+    },
+    {
+      "id": "mem_1794891720286_6co0qo",
+      "capsule_id": "cap_1794891720178_2rlutj",
+      "uploaded_by": "usr_demo_02",
+      "uploader_name": "Alex Vance",
+      "file_name": "Screenshot 2026-10-14 124205.png",
+      "file_type": "image",
+      "mime_type": "image/png",
+      "storage_path": "/uploads/mem_1794891720212-378773184.png",
+      "file_size": 107671,
+      "caption": "",
+      "description": "",
+      "is_favorite": false,
+      "created_at": "2026-11-17T05:02:00.286Z"
     }
   ],
   "letters": [
-    {
-      "id": "let_01",
-      "capsule_id": "cap_unlocked_01",
-      "author_id": "usr_demo_02",
-      "author_name": "Alex Vance",
-      "title": "To the travelers we are becoming",
-      "content": "Dear Future Self,\n\nIf you are reading this, time has slipped past like sand through cupped hands. \nRemember the salt spray in Monterey? Remember how we promised we wouldn't settle into comfortable numbness?\n\nRight now, as I write this, you were terrified of taking risks, yet you packed two bags and drove into the unknown. I hope you still look up at the stars with that exact reverence. I hope you haven't forgotten how laughter sounds when your ribs ache.\n\nKeep building. Keep trusting. Keep wandering.\n\nWith unconditional love,\nYour 2024 Self",
-      "prompt_used": "What do you hope your future self remembers?",
-      "created_at": "2026-09-27T04:14:30.000Z",
-      "updated_at": "2026-09-26T06:14:30.000Z"
-    },
-    {
-      "id": "let_02",
-      "capsule_id": "cap_sealed_soon_02",
-      "author_id": "usr_demo_02",
-      "author_name": "Alex Vance",
-      "title": "Unlocking the 30s: No Regrets",
-      "content": "Hello Alex!\nToday you turn a new chapter. We worried so much about having everything figured out. Did we solve the puzzle? Probably not, and that is okay. Celebrate this day with people who genuinely care about your peace of mind.",
-      "prompt_used": "What are your biggest dreams?",
-      "created_at": "2026-11-01T04:14:30.000Z",
-      "updated_at": "2026-10-31T06:14:30.000Z"
-    },
-    {
-      "id": "let_1794642650166_ckseth",
-      "capsule_id": "cap_1794642650166_jers5i",
-      "author_id": "usr_demo_02",
-      "author_name": "Alex Vance",
-      "title": "Letter to My Future Self",
-      "content": "ergt",
-      "prompt_used": "What is happening in your life right now?",
-      "created_at": "2026-11-14T02:20:50.000Z",
-      "updated_at": "2026-11-13T04:20:50.000Z"
-    },
     {
       "id": "let_1794734630393_p2sm3e",
       "capsule_id": "cap_1794734630393_t5tr7s",
@@ -574,7 +303,7 @@
       "content": "its our state festival",
       "prompt_used": "What do you hope your future self remembers?",
       "created_at": "2026-11-15T03:53:50.000Z",
-      "updated_at": "2026-11-14T16:53:50.000Z"
+      "updated_at": "2026-11-14T00:23:50.000Z"
     },
     {
       "id": "let_1794734882215_caawuo",
@@ -585,7 +314,7 @@
       "content": "sd",
       "prompt_used": "What is happening in your life right now?",
       "created_at": "2026-11-15T03:58:02.000Z",
-      "updated_at": "2026-11-14T16:58:02.000Z"
+      "updated_at": "2026-11-14T00:28:02.000Z"
     },
     {
       "id": "let_1794736219717_qhndzd",
@@ -596,21 +325,21 @@
       "content": "kg",
       "prompt_used": "What is happening in your life right now?",
       "created_at": "2026-11-15T04:20:19.000Z",
-      "updated_at": "2026-11-14T22:50:19.000Z"
-    }
-  ],
-  "capsule_members": [
+      "updated_at": "2026-11-14T06:20:19.000Z"
+    },
     {
-      "id": "mem_rel_01",
-      "capsule_id": "cap_shared_03",
-      "user_id": "usr_contributor_03",
-      "role": "contributor",
-      "user_email": "elena@timecapsule.com",
-      "user_name": "Elena Rostova",
-      "user_avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
-      "joined_at": "2026-11-07T04:14:30.000Z"
+      "id": "let_1794891720178_lpbur0",
+      "capsule_id": "cap_1794891720178_2rlutj",
+      "author_id": "usr_demo_02",
+      "author_name": "Alex Vance",
+      "title": "Letter to My Future Self",
+      "content": "jf",
+      "prompt_used": "What is happening in your life right now?",
+      "created_at": "2026-11-17T05:02:00.178Z",
+      "updated_at": "2026-11-17T05:02:00.324Z"
     }
   ],
+  "capsule_members": [],
   "capsule_invitations": [
     {
       "id": "inv_id_1794735093710",
@@ -653,6 +382,66 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif_1794891784436_rb6xhc",
+      "user_id": "usr_demo_02",
+      "type": "capsule_unlocked",
+      "title": "Your Time Capsule Seal is Opened!",
+      "message": "The stasis seal on \"aed\" has been broken! All preserved memories and future letters are now revealed.",
+      "capsule_id": "cap_1794891720178_2rlutj",
+      "is_read": false,
+      "created_at": "2026-11-17T05:03:04.435Z"
+    },
+    {
+      "id": "notif_1794891720342_sealed",
+      "user_id": "usr_demo_02",
+      "type": "capsule_sealed",
+      "title": "Capsule Sealed into the Future",
+      "message": "\"aed\" has been sealed. Stored memories will remain encrypted until 17/11/2026.",
+      "capsule_id": "cap_1794891720178_2rlutj",
+      "is_read": false,
+      "created_at": "2026-11-17T05:02:00.343Z"
+    },
+    {
+      "id": "notif_1794847986810_vqfguz",
+      "user_id": "usr_demo_02",
+      "type": "capsule_unlocked",
+      "title": "Your Time Capsule Seal is Opened!",
+      "message": "The stasis seal on \"sh;g\" has been broken! All preserved memories and future letters are now revealed.",
+      "capsule_id": "cap_1794845723272_8xq4wg",
+      "is_read": false,
+      "created_at": "2026-11-16T11:23:06.000Z"
+    },
+    {
+      "id": "notif_1794845727286_sealed",
+      "user_id": "usr_demo_02",
+      "type": "capsule_sealed",
+      "title": "Capsule Sealed into the Future",
+      "message": "\"sh;g\" has been sealed. Stored memories will remain encrypted until 16/11/2026.",
+      "capsule_id": "cap_1794845723272_8xq4wg",
+      "is_read": false,
+      "created_at": "2026-11-16T10:45:27.000Z"
+    },
+    {
+      "id": "notif_1794836150233_u3f62d",
+      "user_id": "usr_demo_02",
+      "type": "capsule_unlocked",
+      "title": "Your Time Capsule Seal is Opened!",
+      "message": "The stasis seal on \"palace\" has been broken! All preserved memories and future letters are now revealed.",
+      "capsule_id": "cap_1794836084263_1gddc7",
+      "is_read": true,
+      "created_at": "2026-11-16T08:05:50.000Z"
+    },
+    {
+      "id": "notif_1794836084364_sealed",
+      "user_id": "usr_demo_02",
+      "type": "capsule_sealed",
+      "title": "Capsule Sealed into the Future",
+      "message": "\"palace\" has been sealed. Stored memories will remain encrypted until 16/11/2026.",
+      "capsule_id": "cap_1794836084263_1gddc7",
+      "is_read": false,
+      "created_at": "2026-11-16T08:04:44.000Z"
+    },
     {
       "id": "notif_1794739734497_welcome",
       "user_id": "usr_1794739734497_mvrmwr",
@@ -780,7 +569,7 @@
       "title": "Your Time Capsule is Unlocked!",
       "message": "The wait is over! \"df\" is ready to be opened. Relive your preserved memories now.",
       "capsule_id": "cap_1794642650166_jers5i",
-      "is_read": false,
+      "is_read": true,
       "created_at": "2026-11-14T02:21:50.000Z"
     },
     {
@@ -800,7 +589,7 @@
       "title": "Your Time Capsule is Unlocked!",
       "message": "The wait is over! \"tct\" is ready to be opened. Relive your preserved memories now.",
       "capsule_id": "cap_1794640443188_8gcncd",
-      "is_read": false,
+      "is_read": true,
       "created_at": "2026-11-14T01:45:06.000Z"
     },
     {
@@ -854,34 +643,283 @@
       "created_at": "2026-11-01T04:14:30.000Z"
     }
   ],
-  "comments": [
-    {
-      "id": "comm_01",
-      "capsule_id": "cap_unlocked_01",
-      "user_id": "usr_contributor_03",
-      "username": "elena_sky",
-      "user_avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
-      "content": "This feels like a cinematic movie! That Big Sur sunset is breathtaking.",
-      "created_at": "2026-11-09T04:14:30.000Z"
-    }
-  ],
-  "likes": [
-    {
-      "id": "like_01",
-      "capsule_id": "cap_unlocked_01",
-      "user_id": "usr_contributor_03",
-      "created_at": "2026-11-11T04:14:30.000Z"
-    },
-    {
-      "id": "like_02",
-      "capsule_id": "cap_unlocked_01",
-      "user_id": "usr_admin_01",
-      "created_at": "2026-11-11T04:14:30.000Z"
-    }
-  ],
+  "comments": [],
+  "likes": [],
   "bookmarks": [],
   "reports": [],
   "activity_logs": [
+    {
+      "id": "act_1794891836150_mmf4m7",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-17T05:03:56.150Z"
+    },
+    {
+      "id": "act_1794891824450_yhm2lj",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-17T05:03:44.450Z"
+    },
+    {
+      "id": "act_1794891820450_kksjy6",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Our Pacific Coast Odyssey 2024\"",
+      "timestamp": "2026-11-17T05:03:40.450Z"
+    },
+    {
+      "id": "act_1794891816151_3wehqz",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Letter to My 30th Birthday Self\"",
+      "timestamp": "2026-11-17T05:03:36.151Z"
+    },
+    {
+      "id": "act_1794891812349_0lei2x",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Starlight Expedition: Founders Vault\"",
+      "timestamp": "2026-11-17T05:03:32.349Z"
+    },
+    {
+      "id": "act_1794891807634_j15yyk",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Graduation Summer Vibes\"",
+      "timestamp": "2026-11-17T05:03:27.634Z"
+    },
+    {
+      "id": "act_1794891801712_h456iw",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-17T05:03:21.712Z"
+    },
+    {
+      "id": "act_1794891798630_ttdw6e",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"df\"",
+      "timestamp": "2026-11-17T05:03:18.630Z"
+    },
+    {
+      "id": "act_1794891795299_vcosfc",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"palace\"",
+      "timestamp": "2026-11-17T05:03:15.299Z"
+    },
+    {
+      "id": "act_1794891784451_xptrem",
+      "user_id": "system",
+      "username": "AUTOMATED_SCHEDULER",
+      "action": "SEAL_OPENED",
+      "details": "Capsule \"aed\" seal opened (2026-11-17T05:03:04.435Z). Notified 1 keeper(s) and collaborator(s).",
+      "timestamp": "2026-11-17T05:03:04.435Z"
+    },
+    {
+      "id": "act_1794891763031_poopj4",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"sh;g\"",
+      "timestamp": "2026-11-17T05:02:43.031Z"
+    },
+    {
+      "id": "act_1794891720343_xq31se",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_SEALED",
+      "details": "Sealed capsule \"aed\"",
+      "timestamp": "2026-11-17T05:02:00.343Z"
+    },
+    {
+      "id": "act_1794891720178_7x0rk9",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_CREATED",
+      "details": "Created capsule \"aed\" (Status: draft)",
+      "timestamp": "2026-11-17T05:02:00.178Z"
+    },
+    {
+      "id": "act_1794847987039_3dcbuh",
+      "user_id": "system",
+      "username": "AUTOMATED_SCHEDULER",
+      "action": "SEAL_OPENED",
+      "details": "Capsule \"sh;g\" seal opened (2026-11-16T16:53:06.810Z). Notified 1 keeper(s) and collaborator(s).",
+      "timestamp": "2026-11-16T11:23:06.000Z"
+    },
+    {
+      "id": "act_1794845856824_ojj1ym",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Starlight Expedition: Founders Vault\"",
+      "timestamp": "2026-11-16T10:47:36.000Z"
+    },
+    {
+      "id": "act_1794845807125_97an6e",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-16T10:46:47.000Z"
+    },
+    {
+      "id": "act_1794845797486_ixzf0a",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"df\"",
+      "timestamp": "2026-11-16T10:46:37.000Z"
+    },
+    {
+      "id": "act_1794845794441_c6zyiv",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"palace\"",
+      "timestamp": "2026-11-16T10:46:34.000Z"
+    },
+    {
+      "id": "act_1794845784289_h6zd9j",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"sh;g\"",
+      "timestamp": "2026-11-16T10:46:24.000Z"
+    },
+    {
+      "id": "act_1794845776484_28vo36",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Letter to My 30th Birthday Self\"",
+      "timestamp": "2026-11-16T10:46:16.000Z"
+    },
+    {
+      "id": "act_1794845774588_2jr7z8",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Our Pacific Coast Odyssey 2024\"",
+      "timestamp": "2026-11-16T10:46:14.000Z"
+    },
+    {
+      "id": "act_1794845760545_b5zaml",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Graduation Summer Vibes\"",
+      "timestamp": "2026-11-16T10:46:00.000Z"
+    },
+    {
+      "id": "act_1794845747745_3nwoql",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-16T10:45:47.000Z"
+    },
+    {
+      "id": "act_1794845727345_dpnudg",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_SEALED",
+      "details": "Sealed capsule \"sh;g\"",
+      "timestamp": "2026-11-16T10:45:27.000Z"
+    },
+    {
+      "id": "act_1794845723276_fkgiyh",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_CREATED",
+      "details": "Created capsule \"sh;g\" (Status: draft)",
+      "timestamp": "2026-11-16T10:45:23.000Z"
+    },
+    {
+      "id": "act_1794836150241_zr5o71",
+      "user_id": "system",
+      "username": "AUTOMATED_SCHEDULER",
+      "action": "SEAL_OPENED",
+      "details": "Capsule \"palace\" seal opened (2026-11-16T13:35:50.233Z). Notified 1 keeper(s) and collaborator(s).",
+      "timestamp": "2026-11-16T08:05:50.000Z"
+    },
+    {
+      "id": "act_1794836111623_p2cc5j",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Starlight Expedition: Founders Vault\"",
+      "timestamp": "2026-11-16T08:05:11.000Z"
+    },
+    {
+      "id": "act_1794836109235_lkhmj5",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"Graduation Summer Vibes\"",
+      "timestamp": "2026-11-16T08:05:09.000Z"
+    },
+    {
+      "id": "act_1794836106479_yjvrwi",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-16T08:05:06.000Z"
+    },
+    {
+      "id": "act_1794836104152_zwahlb",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-16T08:05:04.000Z"
+    },
+    {
+      "id": "act_1794836101324_dnofaw",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"tct\"",
+      "timestamp": "2026-11-16T08:05:01.000Z"
+    },
+    {
+      "id": "act_1794836098509_jzr0lt",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_DELETED",
+      "details": "Deleted capsule \"df\"",
+      "timestamp": "2026-11-16T08:04:58.000Z"
+    },
+    {
+      "id": "act_1794836084365_xgfelk",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_SEALED",
+      "details": "Sealed capsule \"palace\"",
+      "timestamp": "2026-11-16T08:04:44.000Z"
+    },
+    {
+      "id": "act_1794836084263_a0k39v",
+      "user_id": "usr_demo_02",
+      "username": "alex_starlight",
+      "action": "CAPSULE_CREATED",
+      "details": "Created capsule \"palace\" (Status: draft)",
+      "timestamp": "2026-11-16T08:04:44.000Z"
+    },
     {
       "id": "act_1794739734497_wff9ks",
       "user_id": "usr_1794739734497_mvrmwr",
@@ -1003,19 +1041,19 @@
       "timestamp": "2026-11-15T03:59:08.000Z"
     },
     {
-      "id": "act_1794734882215_gr0cyd",
-      "user_id": "usr_1794733286231_jown35",
-      "username": "hello",
-      "action": "CAPSULE_CREATED",
-      "details": "Created capsule \"dsd\" (Status: draft)",
-      "timestamp": "2026-11-15T03:58:02.000Z"
-    },
-    {
       "id": "act_1794734882342_wmcpbd",
       "user_id": "usr_1794733286231_jown35",
       "username": "hello",
       "action": "CAPSULE_SEALED",
       "details": "Sealed capsule \"dsd\"",
+      "timestamp": "2026-11-15T03:58:02.000Z"
+    },
+    {
+      "id": "act_1794734882215_gr0cyd",
+      "user_id": "usr_1794733286231_jown35",
+      "username": "hello",
+      "action": "CAPSULE_CREATED",
+      "details": "Created capsule \"dsd\" (Status: draft)",
       "timestamp": "2026-11-15T03:58:02.000Z"
     },
     {
